@@ -1,0 +1,2215 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  >
+
+  <title>
+    Academic AI — Araştırma Çalışma Alanı
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- =====================================================
+       SOL MENÜ
+  ====================================================== -->
+
+  <aside class="sidebar">
+
+    <div class="brand academic-brand" aria-label="Academic AI">
+
+      <div class="brandmark academic-brandmark" aria-hidden="true">
+        <svg viewBox="0 0 72 72" role="img">
+          <path class="logo-book" d="M10 51c8-5 17-5 26 0v9c-9-5-18-5-26 0z"/>
+          <path class="logo-book" d="M62 51c-8-5-17-5-26 0v9c9-5 18-5 26 0z"/>
+          <path class="logo-page" d="M12 55c8-3 16-2 24 2M60 55c-8-3-16-2-24 2"/>
+          <path class="logo-pen" d="M36 8l8 27-8 12-8-12z"/>
+          <circle class="logo-pen-hole" cx="36" cy="34" r="3.2"/>
+          <path class="logo-orbit" d="M14 36c8-15 37-22 48-8 9 12-7 25-22 27"/>
+          <circle class="logo-orbit-dot" cx="14" cy="36" r="2.5"/>
+          <circle class="logo-orbit-dot" cx="61" cy="29" r="2.3"/>
+          <path class="logo-spark" d="M15 14v8M11 18h8M55 11v7M51.5 14.5h7"/>
+        </svg>
+      </div>
+
+      <div class="academic-brand-copy">
+        <strong>Academic AI</strong>
+        <small>Research · Discover · Advance</small>
+      </div>
+
+    </div>
+
+    <button
+      class="new-project"
+      id="newResearchButton"
+      type="button"
+    >
+      ＋ Yeni araştırma
+    </button>
+
+    <nav id="nav">
+
+      <button
+        class="nav-item active"
+        data-page="home"
+        type="button"
+      >
+        ⌂
+        <span>
+          Ana Panel
+        </span>
+      </button>
+
+      <button
+        class="nav-item"
+        data-page="research"
+        type="button"
+      >
+        ⌕
+        <span>
+          Araştırma
+        </span>
+      </button>
+
+      <button
+        class="nav-item"
+        data-page="literature"
+        type="button"
+      >
+        ▤
+        <span>
+          Literatürüm
+        </span>
+      </button>
+
+      <button
+        class="nav-item"
+        data-page="papers"
+        type="button"
+      >
+        ▱
+        <span>
+          Makalelerim
+        </span>
+      </button>
+
+      <button
+        class="nav-item"
+        data-page="analysis"
+        type="button"
+      >
+        ◫
+        <span>
+          Literatür Analizi
+        </span>
+      </button>
+
+      <button
+        class="nav-item"
+        data-page="notes"
+        type="button"
+      >
+        ✎
+        <span>
+          Notlarım
+        </span>
+      </button>
+
+      <button
+        class="nav-item"
+        data-page="thesis"
+        type="button"
+      >
+        ♢
+        <span>
+          Tez / Doktora Projem
+        </span>
+      </button>
+
+      <button
+        class="nav-item"
+        data-page="citations"
+        type="button"
+      >
+        §
+        <span>
+          Atıf & Kaynakça
+        </span>
+      </button>
+
+      <button
+        class="nav-item"
+        data-page="assistant"
+        type="button"
+      >
+        ✦
+        <span>
+          AI Asistan
+        </span>
+      </button>
+
+    </nav>
+
+    <div class="sidebar-foot">
+
+      <div class="avatar">
+        N
+      </div>
+
+      <div>
+        <strong>
+          Araştırmacı
+        </strong>
+
+        <small>
+          Yüksek Lisans / Doktora
+        </small>
+      </div>
+
+    </div>
+
+  </aside>
+
+  <!-- =====================================================
+       ANA İÇERİK
+  ====================================================== -->
+
+  <main>
+
+    <!-- ===================================================
+         ÜST BAR
+    ==================================================== -->
+
+    <header class="topbar">
+
+      <div>
+
+        <button
+          id="menuBtn"
+          class="menu"
+          type="button"
+        >
+          ☰
+        </button>
+
+        <span class="crumb">
+
+          Çalışma Alanım /
+
+          <b id="crumb">
+            Ana Panel
+          </b>
+
+        </span>
+
+      </div>
+
+      <div class="top-actions">
+
+        <button
+          class="icon-btn"
+          type="button"
+        >
+          ⌕
+        </button>
+
+        <button
+          class="icon-btn"
+          type="button"
+        >
+          ♢
+        </button>
+
+      </div>
+
+    </header>
+
+    <!-- ===================================================
+         ANA PANEL
+    ==================================================== -->
+
+    <section
+      id="home"
+      class="page active dashboard-page"
+    >
+      <div class="dashboard-shell">
+        <div class="dashboard-main">
+          <div class="dashboard-greeting">
+            <div>
+              <h1>👋 Hoş geldin, <span>Araştırmacı</span></h1>
+              <p>Bugün araştırmana devam etmek için harika bir gün.</p>
+            </div>
+            <button class="dashboard-search" type="button" data-go="literature">
+              <span>⌕</span> Araştırmada ara... <kbd>⌘ K</kbd>
+            </button>
+          </div>
+
+          <section class="dashboard-card dashboard-overview">
+            <div class="dashboard-card-head">
+              <h2>🔎 Hızlı Bakış</h2>
+            </div>
+            <div class="dashboard-stat-grid">
+              <article class="dashboard-stat">
+                <span class="stat-icon stat-green">▤</span>
+                <div><strong id="literatureCount">0</strong><span>Kaynak</span><small id="homeSourceDelta">Literatüründe</small></div>
+              </article>
+              <article class="dashboard-stat">
+                <span class="stat-icon stat-gold">▱</span>
+                <div><strong id="paperCount">0</strong><span>Makale</span><small>Analiz için hazır</small></div>
+              </article>
+              <article class="dashboard-stat">
+                <span class="stat-icon stat-purple">✎</span>
+                <div><strong id="noteCount">0</strong><span>Not</span><small>Kaynaklara bağlı</small></div>
+              </article>
+              <article class="dashboard-stat">
+                <span class="stat-icon stat-blue">◆</span>
+                <div><strong>1</strong><span>Tez Projesi</span><small id="homeThesisMiniProgress">İlerleme %0</small></div>
+              </article>
+            </div>
+          </section>
+
+          <div class="dashboard-two-col dashboard-top-grid">
+            <section class="dashboard-card active-research-card">
+              <div class="dashboard-card-head"><h2>Aktif Araştırman</h2><button class="ghost-dot" type="button">•••</button></div>
+              <div class="active-research-body">
+                <div class="active-research-icon">🎯</div>
+                <div class="active-research-copy">
+                  <h3 id="homeResearchTitle">Henüz araştırma projesi yok</h3>
+                  <p id="homeResearchSubtitle">Araştırma konunu yapılandırarak çalışma alanını başlat.</p>
+                  <div class="thin-progress"><span id="homeResearchProgressBar" style="width:0%"></span></div>
+                </div>
+                <b id="homeResearchProgressText">%0</b>
+              </div>
+              <div class="research-mini-stats">
+                <span>▤ <b id="homeResearchSourceCount">0</b> Kaynak</span>
+                <span>▱ <b id="homeResearchPaperCount">0</b> Makale</span>
+                <span>✎ <b id="homeResearchNoteCount">0</b> Not</span>
+                <span>☑ <b id="homeResearchSectionCount">0 / 5</b> Bölüm</span>
+              </div>
+              <button class="dashboard-primary" id="homeContinueResearch" data-go="research" type="button">Çalışmaya Devam Et →</button>
+            </section>
+
+            <section class="dashboard-card today-card">
+              <div class="dashboard-card-head"><h2>Bugün Ne Yapabilirsin? ✨</h2></div>
+              <div class="task-list" id="homeTaskList">
+                <button type="button" data-go="analysis"><span class="task-check done">✓</span> Literatür analizini derinleştir</button>
+                <button type="button" data-go="thesis"><span class="task-check"></span> Yöntem bölümüne kaynak bağla</button>
+                <button type="button" data-go="literature"><span class="task-check"></span> 3 yeni makale incele</button>
+                <button type="button" data-go="notes"><span class="task-check"></span> Notlarını gözden geçir</button>
+              </div>
+              <button class="text-link" type="button" data-go="thesis">Tüm görevleri gör →</button>
+            </section>
+          </div>
+
+          <div class="dashboard-two-col dashboard-middle-grid">
+            <section class="dashboard-card recent-sources-card">
+              <div class="dashboard-card-head"><h2>📝 Son Eklenen Kaynaklar</h2><button class="text-link" type="button" data-go="literature">Tümünü Gör →</button></div>
+              <div id="homeRecentSources" class="recent-source-list">
+                <div class="dashboard-empty-row">Henüz kaynak eklenmedi.</div>
+              </div>
+            </section>
+
+            <section class="dashboard-card thesis-progress-card">
+              <div class="dashboard-card-head"><h2>⚯ Tez İlerlemen</h2><button class="text-link" type="button" data-go="thesis">Tüm bölümler →</button></div>
+              <div class="thesis-progress-top">
+                <div class="progress-ring" id="homeThesisRing"><span id="homeThesisPercent">%0</span></div>
+                <div><strong>Genel İlerleme</strong><small id="homeThesisCompletedText">0 / 5 bölüm tamamlandı</small></div>
+              </div>
+              <div id="homeThesisStages" class="thesis-stage-list"></div>
+            </section>
+          </div>
+
+          <div class="dashboard-two-col dashboard-bottom-grid">
+            <section class="dashboard-card literature-overview-card">
+              <div class="dashboard-card-head"><h2>📊 Literatür Kapsamı Genel Bakış</h2></div>
+              <div class="literature-mini-grid">
+                <article><h4>Yayın Yılı Dağılımı</h4><div id="homeYearBars" class="mini-bars"></div></article>
+                <article><h4>Yöntem Dağılımı</h4><div class="method-donut" id="homeMethodDonut"><span></span></div><div id="homeMethodLegend" class="method-legend"></div></article>
+                <article><h4>Temalar</h4><div id="homeThemeTags" class="theme-tags"><span>Henüz veri yok</span></div></article>
+                <article><h4>Ortalama Atıf</h4><strong class="big-number" id="homeAverageCitation">—</strong><small>Mevcut metadata</small></article>
+              </div>
+            </section>
+
+            <section class="dashboard-card recommended-card">
+              <div class="dashboard-card-head"><h2>🎯 Önerilen Kaynaklar</h2></div>
+              <p>Sizin için seçildi</p>
+              <div id="homeRecommendedSource" class="recommended-source">
+                <span class="recommended-icon">▤</span>
+                <div><strong>Kaynak önerisi için araştırma konunu kaydet</strong><small>Araştırma sayfasından başlayabilirsin.</small></div>
+              </div>
+              <button class="secondary-button" type="button" data-go="literature">Kaynağı incele</button>
+            </section>
+          </div>
+        </div>
+
+        <aside class="dashboard-detail" id="homeDetailPanel">
+          <div class="detail-tabs"><button class="active">▤<span>Detay</span></button><button>⌘<span>Harita</span></button><button>⌁<span>Zaman Çizgisi</span></button></div>
+          <div class="detail-paper-card">
+            <div class="detail-paper-top">
+              <div class="detail-cover">✦<span>AI</span></div>
+              <div><h3 id="homeDetailTitle">Henüz seçili kaynak yok</h3><p id="homeDetailMeta">Literatürüne kaynak eklediğinde burada öne çıkan kaynağı göreceksin.</p><span class="fit-badge" id="homeDetailFit">Hazır</span></div>
+            </div>
+            <div class="detail-actions">
+              <button data-go="notes" type="button">✎<span>Not Ekle</span></button>
+              <button data-go="literature" type="button">▧<span>Kaydet</span></button>
+              <button data-go="citations" type="button">§<span>Atıf Oluştur</span></button>
+              <button data-go="papers" type="button">▱<span>PDF</span></button>
+            </div>
+            <section><h4>📌 Temel Bilgiler</h4><dl id="homeDetailBasics"><div><dt>Araştırma Amacı</dt><dd>—</dd></div><div><dt>Yöntem</dt><dd>—</dd></div><div><dt>Örneklem</dt><dd>—</dd></div><div><dt>Yıl</dt><dd>—</dd></div></dl></section>
+            <section class="detail-use-card"><h4>💡 Tezimde Nerede Kullanabilirim?</h4><p id="homeDetailUse">Kaynak analizi olduğunda burada öneri gösterilir.</p></section>
+            <section><h4>🏷 Anahtar Kavramlar</h4><div id="homeDetailKeywords" class="detail-keywords"><span>—</span></div></section>
+            <section><h4>📊 Etki ve Atıf</h4><div class="impact-grid"><span>Atıf Sayısı <b id="homeDetailCitations">—</b></span><span>Yıllık Atıf (Ort.) <b id="homeDetailYearly">—</b></span></div><div class="sparkline">⌁⌁⌁⌁⌁</div></section>
+            <button class="detail-analysis-button" type="button" data-go="literature">✨ Tam Analizi Gör</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         ARAŞTIRMA
+    ==================================================== -->
+
+    <section
+      id="research"
+      class="page"
+    >
+
+      <div class="page-title">
+
+        <span class="eyebrow">
+          ARAŞTIRMA
+        </span>
+
+        <h1>
+          Araştırma konunu yapılandır
+        </h1>
+
+        <p>
+          Araştırma fikrini amaç, problem,
+          araştırma soruları, kapsam,
+          temel kavramlar ve literatür arama
+          terimleriyle sistematik bir araştırma
+          çerçevesine dönüştür.
+        </p>
+
+      </div>
+
+      <div class="research-workspace">
+
+        <article class="research-main-card">
+
+          <div class="research-card-head">
+
+            <div>
+
+              <span class="eyebrow">
+                01 — ARAŞTIRMA FİKRİ
+              </span>
+
+              <h2>
+                Araştırma konun nedir?
+              </h2>
+
+            </div>
+
+            <span class="free-mode-badge">
+              API kullanılmaz
+            </span>
+
+          </div>
+
+          <label for="researchTopic">
+            Araştırma konusu
+          </label>
+
+          <textarea
+            id="researchTopic"
+            class="research-topic-input"
+            placeholder="Örn. Üretken yapay zekânın gazetecilerin haber üretim süreçleri ve editoryal kararları üzerindeki etkisi"
+          ></textarea>
+
+          <div class="research-topic-footer">
+
+            <small>
+              Konuyu mümkün olduğunca açık yaz.
+              Hedef grup, bağlam, teknoloji veya
+              dönem gibi ayrıntılar daha güçlü bir
+              araştırma çerçevesi oluşturur.
+            </small>
+
+            <button
+              id="buildResearchFramework"
+              class="primary"
+              type="button"
+            >
+              ✦ Araştırma çerçevesini hazırla
+            </button>
+
+          </div>
+
+          <div
+            id="researchFrameworkStatus"
+            class="research-status"
+            hidden
+          ></div>
+
+        </article>
+
+        <div
+          id="researchFramework"
+          class="research-framework"
+          hidden
+        >
+
+          <div class="research-framework-head">
+
+            <div>
+
+              <span class="eyebrow">
+                ARAŞTIRMA ÇERÇEVESİ
+              </span>
+
+              <h2>
+                Çalışmanın akademik iskeleti
+              </h2>
+
+              <p>
+                Alanları düzenleyebilirsin.
+                Kaydettiğinde bu çerçeve araştırma
+                projenin temel bilgileri olarak saklanır.
+              </p>
+
+            </div>
+
+            <div class="research-framework-actions">
+
+              <button
+                id="clearResearchFramework"
+                class="secondary-button"
+                type="button"
+              >
+                Temizle
+              </button>
+
+              <button
+                id="saveResearchFramework"
+                class="primary"
+                type="button"
+              >
+                ✓ Araştırmama Kaydet
+              </button>
+
+            </div>
+
+          </div>
+
+          <div class="research-two-column">
+
+            <article class="research-field-card">
+
+              <span class="eyebrow">
+                02 — AMAÇ
+              </span>
+
+              <label for="researchPurposeDraft">
+                Araştırmanın amacı
+              </label>
+
+              <textarea
+                id="researchPurposeDraft"
+                placeholder="Bu araştırmanın temel amacı..."
+              ></textarea>
+
+            </article>
+
+            <article class="research-field-card">
+
+              <span class="eyebrow">
+                03 — PROBLEM
+              </span>
+
+              <label for="researchProblemDraft">
+                Araştırma problemi
+              </label>
+
+              <textarea
+                id="researchProblemDraft"
+                placeholder="Araştırmanın temel problemi..."
+              ></textarea>
+
+            </article>
+
+          </div>
+
+          <article class="research-field-card research-wide-card">
+
+            <span class="eyebrow">
+              04 — ANA ARAŞTIRMA SORUSU
+            </span>
+
+            <label for="mainResearchQuestion">
+              Ana araştırma sorusu
+            </label>
+
+            <input
+              id="mainResearchQuestion"
+              type="text"
+              placeholder="Örn. Üretken yapay zekâ gazetecilerin haber üretim pratiklerini nasıl dönüştürmektedir?"
+            >
+
+          </article>
+
+          <article class="research-field-card research-wide-card">
+
+            <div class="research-section-head">
+
+              <div>
+
+                <span class="eyebrow">
+                  05 — ALT ARAŞTIRMA SORULARI
+                </span>
+
+                <h3>
+                  Araştırmayı alt sorulara ayır
+                </h3>
+
+              </div>
+
+              <button
+                id="addResearchQuestion"
+                class="secondary-button"
+                type="button"
+              >
+                ＋ Soru ekle
+              </button>
+
+            </div>
+
+            <div
+              id="researchQuestionsList"
+              class="research-question-list"
+            >
+
+              <div class="research-question-row">
+
+                <span>
+                  1
+                </span>
+
+                <input
+                  class="research-sub-question"
+                  type="text"
+                  placeholder="Alt araştırma sorusu"
+                >
+
+                <button
+                  class="remove-question"
+                  type="button"
+                  title="Soruyu sil"
+                >
+                  ×
+                </button>
+
+              </div>
+
+              <div class="research-question-row">
+
+                <span>
+                  2
+                </span>
+
+                <input
+                  class="research-sub-question"
+                  type="text"
+                  placeholder="Alt araştırma sorusu"
+                >
+
+                <button
+                  class="remove-question"
+                  type="button"
+                  title="Soruyu sil"
+                >
+                  ×
+                </button>
+
+              </div>
+
+              <div class="research-question-row">
+
+                <span>
+                  3
+                </span>
+
+                <input
+                  class="research-sub-question"
+                  type="text"
+                  placeholder="Alt araştırma sorusu"
+                >
+
+                <button
+                  class="remove-question"
+                  type="button"
+                  title="Soruyu sil"
+                >
+                  ×
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <div class="research-two-column">
+
+            <article class="research-field-card">
+
+              <span class="eyebrow">
+                06 — KAPSAM
+              </span>
+
+              <label for="researchScope">
+                Araştırmanın kapsamı
+              </label>
+
+              <textarea
+                id="researchScope"
+                placeholder="Araştırmanın hangi grup, kurum, ülke, dönem veya alanla sınırlı olacağını yaz..."
+              ></textarea>
+
+            </article>
+
+            <article class="research-field-card">
+
+              <span class="eyebrow">
+                07 — HEDEF / ÇALIŞMA GRUBU
+              </span>
+
+              <label for="researchTargetGroup">
+                Olası çalışma grubu
+              </label>
+
+              <textarea
+                id="researchTargetGroup"
+                placeholder="Örn. Uluslararası haber kuruluşlarında görev yapan muhabir ve editörler"
+              ></textarea>
+
+            </article>
+
+          </div>
+
+          <article class="research-field-card research-wide-card">
+
+            <div class="research-section-head">
+
+              <div>
+
+                <span class="eyebrow">
+                  08 — ANAHTAR KAVRAMLAR
+                </span>
+
+                <h3>
+                  Araştırmanın temel kavramları
+                </h3>
+
+              </div>
+
+            </div>
+
+            <div class="keyword-entry-row">
+
+              <input
+                id="researchKeywordInput"
+                type="text"
+                placeholder="Kavram yaz ve Enter'a bas"
+              >
+
+              <button
+                id="addResearchKeyword"
+                class="secondary-button"
+                type="button"
+              >
+                ＋ Ekle
+              </button>
+
+            </div>
+
+            <div
+              id="researchKeywordsDraft"
+              class="tags research-keywords"
+            ></div>
+
+          </article>
+
+          <div class="research-two-column">
+
+            <article class="research-field-card">
+
+              <span class="eyebrow">
+                09 — TÜRKÇE LİTERATÜR ARAMASI
+              </span>
+
+              <label for="turkishSearchTerms">
+                Türkçe arama terimleri
+              </label>
+
+              <textarea
+                id="turkishSearchTerms"
+                placeholder='"yapay zekâ" AND gazetecilik'
+              ></textarea>
+
+            </article>
+
+            <article class="research-field-card">
+
+              <span class="eyebrow">
+                10 — İNGİLİZCE LİTERATÜR ARAMASI
+              </span>
+
+              <label for="englishSearchTerms">
+                İngilizce arama terimleri
+              </label>
+
+              <textarea
+                id="englishSearchTerms"
+                placeholder='"artificial intelligence" AND journalism'
+              ></textarea>
+
+            </article>
+
+          </div>
+
+          <article class="research-search-card">
+
+            <div>
+
+              <span class="eyebrow">
+                SONRAKİ ADIM
+              </span>
+
+              <h3>
+                Literatürü taramaya hazır mısın?
+              </h3>
+
+              <p>
+                Araştırma çerçeveni kaydettikten
+                sonra kaynaklarını toplamaya
+                başlayabilirsin.
+              </p>
+
+            </div>
+
+            <button
+              id="goToLiteratureSearch"
+              class="primary"
+              type="button"
+              data-go="literature"
+            >
+              ⌕ Literatüre geç
+            </button>
+
+          </article>
+
+          <div
+            id="researchSaveStatus"
+            class="research-status"
+            hidden
+          ></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         LİTERATÜR
+    ==================================================== -->
+
+    <section
+      id="literature"
+      class="page"
+    >
+
+      <div class="page-title">
+
+        <span class="eyebrow">
+          LİTERATÜRÜM
+        </span>
+
+        <h1>
+          Kaynaklarını tek yerde yönet
+        </h1>
+
+        <p>
+          Yöntem, örneklem, bulgular ve temel
+          kavramları birlikte takip et.
+        </p>
+
+      </div>
+
+      <div
+        id="literatureToolbar"
+        class="literature-toolbar"
+      >
+
+        <div class="literature-search-wrap">
+          <span>⌕</span>
+          <input
+            id="literatureSearchInput"
+            type="search"
+            placeholder="Başlık, yöntem, örneklem, bulgu veya anahtar kavram ara..."
+            autocomplete="off"
+          >
+        </div>
+<div
+  style="
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:12px;
+  "
+>
+  <button
+    id="addManualSourceFromLibrary"
+    class="primary"
+    type="button"
+  >
+    ＋ Kaynak Ekle
+  </button>
+
+  <button
+    class="secondary-button"
+    data-go="papers"
+    type="button"
+  >
+    ▱ PDF Yükle
+  </button>
+</div>
+        <div class="literature-filter-row">
+          <select
+            id="literatureMethodFilter"
+            aria-label="Yönteme göre filtrele"
+          >
+            <option value="all">Tüm yöntemler</option>
+            <option value="Nitel">Nitel</option>
+            <option value="Nicel">Nicel</option>
+            <option value="Karma">Karma</option>
+            <option value="Belirlenemedi">Yöntem belirsiz</option>
+          </select>
+
+          <select
+            id="literatureSort"
+            aria-label="Kaynakları sırala"
+          >
+            <option value="newest">En yeni kayıt</option>
+            <option value="oldest">En eski kayıt</option>
+            <option value="title">Başlığa göre</option>
+          </select>
+        </div>
+
+        <div class="literature-selection-bar">
+          <div>
+            <strong id="literatureVisibleCount">0 kaynak</strong>
+            <span id="literatureSelectedCount">0 seçili</span>
+          </div>
+
+          <div class="literature-selection-actions">
+            <button
+              id="selectAllVisibleLiterature"
+              class="secondary-button"
+              type="button"
+            >
+              Görünenleri seç
+            </button>
+
+            <button
+              id="clearLiteratureSelection"
+              class="secondary-button"
+              type="button"
+            >
+              Seçimi temizle
+            </button>
+
+            <button
+              id="analyzeSelectedLiterature"
+              class="primary"
+              type="button"
+            >
+              ◫ Seçilenleri karşılaştır
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <div
+        id="literatureList"
+        class="empty"
+      >
+
+        ▤
+
+        <h3>
+          Henüz literatür kaynağın yok
+        </h3>
+
+        <p>
+          İlk makaleni ekleyerek literatür matrisini
+          oluşturmaya başla.
+        </p>
+
+        <button
+          class="primary"
+          data-go="papers"
+          type="button"
+        >
+          Makale ekle
+        </button>
+
+      </div>
+
+      <div
+        id="literatureNoResults"
+        class="empty small"
+        hidden
+      >
+        Aramana veya filtrelerine uyan kaynak bulunamadı.
+      </div>
+
+      <div
+        id="literatureDetailOverlay"
+        class="literature-detail-overlay"
+        hidden
+      >
+        <article
+          class="literature-detail-panel"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="literatureDetailTitle"
+        >
+          <div class="literature-detail-head">
+            <div>
+              <span class="eyebrow">KAYNAK AYRINTISI</span>
+              <h2 id="literatureDetailTitle">Kaynak</h2>
+            </div>
+            <button
+              id="closeLiteratureDetail"
+              class="literature-detail-close"
+              type="button"
+              aria-label="Ayrıntı penceresini kapat"
+            >×</button>
+          </div>
+          <div id="literatureDetailContent"></div>
+        </article>
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         MAKALELER
+    ==================================================== -->
+
+    <section
+      id="papers"
+      class="page"
+    >
+
+      <div class="page-title">
+
+        <span class="eyebrow">
+          MAKALELERİM
+        </span>
+
+        <h1>
+          Makale veya tez ekle ve analiz et
+        </h1>
+
+        <p>
+          PDF dosyanı yükle. Academic AI
+          araştırmanın amacı, yöntemi, örneklemi,
+          bulguları, sınırlılıkları ve akademik
+          katkısını analiz etsin.
+        </p>
+
+      </div>
+
+      <div class="upload-panel">
+
+        <input
+          type="file"
+          id="pdfInput"
+          accept=".pdf"
+          hidden
+        >
+
+        <button
+          id="uploadButton"
+          class="upload-box"
+          type="button"
+        >
+
+          ＋
+
+          <strong>
+            PDF makale veya tez yükle
+          </strong>
+
+          <span>
+            Dosyanı seçmek için tıkla
+          </span>
+
+        </button>
+
+        <div id="fileInfo"></div>
+
+     <span>
+  Dosyanı seçmek için tıkla
+</span>
+
+</button>
+
+<div id="fileInfo"></div>
+
+<button
+  id="analyzeButton"
+  class="primary"
+  type="button"
+  hidden
+>
+  ✦ AI ile Analiz Et
+</button>
+
+</div>
+
+<div
+  id="paperAnalysis"
+  class="analysis-result"
+  hidden
+>
+
+        <div class="analysis-head">
+
+          <div>
+
+            <span class="eyebrow">
+              AI AKADEMİK ANALİZ
+            </span>
+
+            <h2 id="analysisTitle">
+              Akademik belge analizi
+            </h2>
+
+          </div>
+
+          <button
+            id="saveLiterature"
+            class="primary"
+            type="button"
+          >
+            ＋ Literatürüme Kaydet
+          </button>
+
+        </div>
+
+        <div class="analysis-grid">
+
+          <article class="wide">
+            <span>
+              ARAŞTIRMANIN AMACI
+            </span>
+            <p id="analysisPurpose">
+              —
+            </p>
+          </article>
+
+          <article class="wide">
+            <span>
+              ARAŞTIRMA PROBLEMİ / SORUSU
+            </span>
+            <p id="analysisResearchProblem">
+              —
+            </p>
+          </article>
+
+          <article>
+            <span>
+              YÖNTEM
+            </span>
+            <p id="analysisMethod">
+              —
+            </p>
+          </article>
+
+          <article>
+            <span>
+              ARAŞTIRMA DESENİ
+            </span>
+            <p id="analysisResearchDesign">
+              —
+            </p>
+          </article>
+
+          <article>
+            <span>
+              EVREN
+            </span>
+            <p id="analysisPopulation">
+              —
+            </p>
+          </article>
+
+          <article>
+            <span>
+              ÖRNEKLEM / ÇALIŞMA GRUBU
+            </span>
+            <p id="analysisSample">
+              —
+            </p>
+          </article>
+
+          <article>
+            <span>
+              VERİ TOPLAMA
+            </span>
+            <p id="analysisDataCollection">
+              —
+            </p>
+          </article>
+
+          <article>
+            <span>
+              VERİ ANALİZİ
+            </span>
+            <p id="analysisDataAnalysis">
+              —
+            </p>
+          </article>
+
+          <article class="wide">
+
+            <span>
+              AYRINTILI ÖZET
+            </span>
+
+            <p id="analysisSummary">
+              —
+            </p>
+
+          </article>
+
+          <article class="wide">
+
+            <span>
+              ÖNEMLİ BULGULAR
+            </span>
+
+            <div
+              id="analysisFindings"
+              class="analysis-list"
+            >
+              —
+            </div>
+
+          </article>
+
+          <article class="wide">
+
+            <span>
+              ARAŞTIRMANIN SONUÇLARI
+            </span>
+
+            <div
+              id="analysisConclusions"
+              class="analysis-list"
+            >
+              —
+            </div>
+
+          </article>
+
+          <article class="wide">
+
+            <span>
+              ARAŞTIRMANIN SINIRLILIKLARI
+            </span>
+
+            <div
+              id="analysisLimitations"
+              class="analysis-list"
+            >
+              —
+            </div>
+
+          </article>
+
+          <article class="wide">
+
+            <span>
+              ARAŞTIRMACININ ÖNERİLERİ
+            </span>
+
+            <div
+              id="analysisRecommendations"
+              class="analysis-list"
+            >
+              —
+            </div>
+
+          </article>
+
+          <article class="wide">
+
+            <span>
+              AKADEMİK / BİLİMSEL KATKI
+            </span>
+
+            <p id="analysisContribution">
+              —
+            </p>
+
+          </article>
+
+          <article class="wide">
+
+            <span>
+              ANAHTAR KAVRAMLAR
+            </span>
+
+            <div
+              id="analysisKeywords"
+              class="tags"
+            ></div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         LİTERATÜR ANALİZİ
+    ==================================================== -->
+
+    <section
+      id="analysis"
+      class="page"
+    >
+
+      <div class="page-title">
+
+        <span class="eyebrow">
+          LİTERATÜR ANALİZİ
+        </span>
+
+        <h1>
+          Kaynaklarını birlikte analiz et
+        </h1>
+
+        <p>
+          Literatürüne kaydettiğin çalışmaların
+          yöntemlerini, örneklemlerini,
+          kavramlarını ve bulgularını karşılaştır.
+        </p>
+
+      </div>
+      <div
+  class="literature-empty-actions"
+  style="
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:18px;
+  "
+>
+
+  <button
+    id="addManualSourceButton"
+    class="primary"
+    type="button"
+  >
+    ＋ Kaynak Ekle
+  </button>
+
+  <button
+    id="suggestSourcesButton"
+    class="secondary-button"
+    type="button"
+  >
+    ✦ Academic AI Kaynak Önersin
+  </button>
+
+  <button
+    class="secondary-button"
+    data-go="papers"
+    type="button"
+  >
+    ▱ PDF Yükle
+  </button>
+
+</div>
+
+<div
+  id="sourceSuggestionStatus"
+  class="status"
+  hidden
+></div>
+
+
+<div
+
+  id="sourceSuggestionResults"
+
+  class="source-suggestion-results"
+
+  hidden
+
+></div>
+
+      <div
+        id="literatureAnalysisEmpty"
+        class="empty"
+      >
+
+        ◫
+
+        <h3>
+          Karşılaştırma için kaynak gerekiyor
+        </h3>
+
+        <p>
+          En az iki akademik çalışmayı
+          Literatürüm'e kaydet.
+        </p>
+
+      </div>
+
+      <div
+        id="literatureAnalysisContent"
+        hidden
+      >
+
+        <div class="stats literature-analysis-stats">
+
+          <div>
+
+            <span>
+              Toplam çalışma
+            </span>
+
+            <strong id="analysisSourceCount">
+              0
+            </strong>
+
+            <small>
+              Karşılaştırmaya dahil
+            </small>
+
+          </div>
+
+          <div>
+
+            <span>
+              Yöntem türü
+            </span>
+
+            <strong id="analysisMethodCount">
+              0
+            </strong>
+
+            <small>
+              Farklı yöntem/desen
+            </small>
+
+          </div>
+
+          <div>
+
+            <span>
+              Ortak kavram
+            </span>
+
+            <strong id="analysisCommonKeywordCount">
+              0
+            </strong>
+
+            <small>
+              Tekrar eden kavram
+            </small>
+
+          </div>
+
+          <div>
+
+            <span>
+              Kanıtlı bulgu
+            </span>
+
+            <strong id="analysisEvidenceCount">
+              0
+            </strong>
+
+            <small>
+              Kaynakla desteklenen
+            </small>
+
+          </div>
+
+        </div>
+
+        <div class="literature-analysis-grid">
+
+          <article class="analysis-insight-card">
+
+            <span class="eyebrow">
+              YÖNTEM HARİTASI
+            </span>
+
+            <h3>
+              Çalışmalar hangi yöntemleri kullanıyor?
+            </h3>
+
+            <div
+              id="methodDistribution"
+              class="analysis-distribution"
+            ></div>
+
+          </article>
+
+          <article class="analysis-insight-card">
+
+            <span class="eyebrow">
+              ORTAK KAVRAMLAR
+            </span>
+
+            <h3>
+              Literatürde tekrar eden kavramlar
+            </h3>
+
+            <div
+              id="commonKeywords"
+              class="tags"
+            ></div>
+
+          </article>
+
+        </div>
+
+        <article class="analysis-insight-card wide-analysis-card">
+
+          <span class="eyebrow">
+            ÖRNEKLEM KARŞILAŞTIRMASI
+          </span>
+
+          <h3>
+            Çalışmaların örneklem ve çalışma grupları
+          </h3>
+
+          <div
+            id="sampleComparison"
+            class="comparison-list"
+          ></div>
+
+        </article>
+
+        <article class="analysis-insight-card wide-analysis-card">
+
+          <span class="eyebrow">
+            LİTERATÜR MATRİSİ
+          </span>
+
+          <h3>
+            Çalışmaları yan yana karşılaştır
+          </h3>
+
+          <div class="literature-table-wrap">
+
+            <table class="literature-table">
+
+              <thead>
+
+                <tr>
+                  <th>Çalışma</th>
+                  <th>Yöntem</th>
+                  <th>Örneklem</th>
+                  <th>Veri toplama</th>
+                  <th>Veri analizi</th>
+                  <th>Temel kavramlar</th>
+                </tr>
+
+              </thead>
+
+              <tbody id="literatureMatrixBody">
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </article>
+
+        <article class="analysis-insight-card wide-analysis-card">
+
+          <span class="eyebrow">
+            BULGU HAVUZU
+          </span>
+
+          <h3>
+            Kaynaklardan gelen temel bulgular
+          </h3>
+
+          <div
+            id="literatureFindingsPool"
+            class="finding-pool"
+          ></div>
+
+        </article>
+
+        <article class="analysis-insight-card wide-analysis-card">
+
+          <span class="eyebrow">
+            SINIRLILIK HARİTASI
+          </span>
+
+          <h3>
+            Çalışmalarda görülen sınırlılıklar
+          </h3>
+
+          <div class="analysis-legend">
+
+            <span>
+              🟢 Araştırmacı açıkça belirtmiş
+            </span>
+
+            <span>
+              🔵 Belgede bulunan gerçek
+            </span>
+
+            <span>
+              🟠 Academic AI çıkarımı
+            </span>
+
+          </div>
+
+          <div
+            id="literatureLimitationsPool"
+            class="finding-pool"
+          ></div>
+
+        </article>
+
+        <article class="analysis-insight-card wide-analysis-card">
+
+          <span class="eyebrow">
+            ARAŞTIRMA BOŞLUĞU
+          </span>
+
+          <h3>
+            Literatürde daha az ele alınan noktaları keşfet
+          </h3>
+
+          <div
+            id="researchGapPreview"
+            class="research-gap-preview"
+          >
+
+            <div
+              id="researchGapList"
+              class="comparison-list"
+            ></div>
+
+          </div>
+
+        </article>
+               <!-- ===================================================
+             AKILLI LİTERATÜR SENTEZİ V2
+        ==================================================== -->
+
+        <article class="analysis-insight-card wide-analysis-card">
+
+          <span class="eyebrow">
+            AKILLI LİTERATÜR SENTEZİ
+          </span>
+
+          <h3>
+            Literatürün genel görünümü ve ortak yönleri
+          </h3>
+
+          <p class="analysis-help">
+            Seçilen çalışmaların yöntem, kavram, örneklem ve bulgu
+            yapısını birlikte değerlendirir. Bu bölüm mevcut kayıtlı
+            verilerden yerel olarak oluşturulur ve yeni bir AI çağrısı yapmaz.
+          </p>
+
+          <div
+            id="synthesisOverview"
+            class="comparison-list"
+          ></div>
+
+        </article>
+
+        <article class="analysis-insight-card wide-analysis-card">
+
+          <span class="eyebrow">
+            KANIT GÜCÜ
+          </span>
+
+          <h3>
+            Çalışmalardaki metodolojik bilgi kapsamı
+          </h3>
+
+          <p class="analysis-help">
+            Yöntem, örneklem, bulgu, veri toplama, veri analizi ve
+            sınırlılık bilgilerinin mevcut olup olmadığını değerlendirir.
+            Bu skor bilimsel kalite puanı değildir; Academic AI'da bulunan
+            yapılandırılmış bilgi kapsamını gösterir.
+          </p>
+
+          <div
+            id="evidenceStrength"
+            class="comparison-list"
+          ></div>
+
+        </article>
+
+        <article class="analysis-insight-card wide-analysis-card">
+
+          <span class="eyebrow">
+            YÖNTEM – BULGU İLİŞKİLERİ
+          </span>
+
+          <h3>
+            Farklı yöntemlerin ulaştığı bulguları karşılaştır
+          </h3>
+
+          <p class="analysis-help">
+            Çalışmaları yöntemlerine göre gruplar ve her yöntem grubunda
+            raporlanan temel bulguları birlikte gösterir.
+          </p>
+
+          <div
+            id="methodFindingRelations"
+            class="comparison-list"
+          ></div>
+
+        </article>
+
+        <article class="analysis-insight-card wide-analysis-card">
+
+          <span class="eyebrow">
+            ARAŞTIRMA FIRSATLARI
+          </span>
+
+          <h3>
+            Yeni çalışma ve tez fırsatlarını keşfet
+          </h3>
+
+          <p class="analysis-help">
+            Yöntem yoğunlaşması, eksik örneklem bilgileri, ortak kavramlar,
+            sınırlılıklar ve tekrar eden bulgular üzerinden araştırma fırsatı
+            sinyalleri üretir. Bunlar kesin araştırma boşluğu değil,
+            araştırmacının değerlendirmesi gereken yönlendirici sinyallerdir.
+          </p>
+
+          <div
+            id="researchOpportunities"
+            class="comparison-list"
+          ></div>
+
+        </article> 
+
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         NOTLAR
+    ==================================================== -->
+
+    <section
+      id="notes"
+      class="page"
+    >
+
+      <div class="page-title">
+
+        <span class="eyebrow">
+          NOTLARIM
+        </span>
+
+        <h1>
+          Akıllı akademik notlar
+        </h1>
+
+        <p>
+          Notlarını tez bölümlerine bağla
+          ve araştırma boyunca tekrar kullan.
+        </p>
+
+      </div>
+
+      <div class="note-layout">
+
+        <div class="panel">
+
+          <label>
+            Yeni not
+          </label>
+
+          <input
+            id="noteTitle"
+            placeholder="Not başlığı"
+          >
+
+          <textarea
+            id="noteText"
+            placeholder="Okurken aklına gelen fikri veya bulguyu yaz..."
+          ></textarea>
+
+          <div class="row">
+
+            <select id="noteSection">
+
+              <option value="">
+                Tez bölümü: Seçilmedi
+              </option>
+
+              <option>
+                Giriş
+              </option>
+
+              <option>
+                Literatür
+              </option>
+
+              <option>
+                Yöntem
+              </option>
+
+              <option>
+                Bulgular
+              </option>
+
+              <option>
+                Sonuç
+              </option>
+
+            </select>
+
+           <button
+  class="primary"
+  data-go="papers"
+  type="button"
+>
+  ＋ Kendi kaynağımı ekle
+</button>
+
+          </div>
+
+        </div>
+
+        <div>
+
+          <h3 class="mini-title">
+            Son notlar
+          </h3>
+
+          <div
+            id="notesList"
+            class="notes-list"
+          >
+
+            <div class="empty small">
+              Henüz not yok.
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         TEZ
+    ==================================================== -->
+
+    <section
+      id="thesis"
+      class="page"
+    >
+
+      <div class="page-title">
+
+        <span class="eyebrow">
+          TEZ / DOKTORA PROJEM
+        </span>
+
+        <h1>
+          Araştırma sürecini yönet
+        </h1>
+
+        <p>
+          Girişten sonuca kadar ilerlemeni
+          tek çalışma alanında takip et.
+        </p>
+
+      </div>
+
+      <div class="timeline">
+
+        <div>
+          <b>01</b>
+          <span>
+            <strong>Giriş</strong>
+            <small>Başlanmadı</small>
+          </span>
+        </div>
+
+        <div>
+          <b>02</b>
+          <span>
+            <strong>Literatür</strong>
+            <small>Başlanmadı</small>
+          </span>
+        </div>
+
+        <div>
+          <b>03</b>
+          <span>
+            <strong>Yöntem</strong>
+            <small>Başlanmadı</small>
+          </span>
+        </div>
+
+        <div>
+          <b>04</b>
+          <span>
+            <strong>Veri & Analiz</strong>
+            <small>Başlanmadı</small>
+          </span>
+        </div>
+
+        <div>
+          <b>05</b>
+          <span>
+            <strong>Sonuç</strong>
+            <small>Başlanmadı</small>
+          </span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         ATIF
+    ==================================================== -->
+
+    <section
+      id="citations"
+      class="page"
+    >
+
+      <div class="page-title">
+
+        <span class="eyebrow">
+          ATIF & KAYNAKÇA
+        </span>
+
+        <h1>
+          APA 7'yi daha kolay kullan
+        </h1>
+
+        <p>
+          DOI veya kaynak bilgisinden doğrulanabilir
+          metadata alıp atıf biçimlendirmek için
+          tasarlanan alan.
+        </p>
+
+      </div>
+
+      <div class="citation-grid">
+
+        <div class="panel">
+
+          <label>
+            DOI veya kaynak bilgisi
+          </label>
+
+          <input
+            placeholder="10.xxxx/xxxxx veya makale başlığı"
+          >
+
+          <button
+            class="primary"
+            type="button"
+          >
+            ⌕ Kaynağı bul
+          </button>
+
+          <small class="hint">
+            Crossref doğrulaması daha sonra
+            bağlanacak.
+          </small>
+
+        </div>
+
+        <div class="preview">
+
+          <span>
+            APA 7 ÖNİZLEME
+          </span>
+
+          <p>
+            Doğrulanan kaynak seçildiğinde
+            kaynakça ve metin içi atıf burada
+            hazırlanacak.
+          </p>
+
+          <div class="citation-types">
+
+            <button type="button">
+              (Yazar, Yıl)
+            </button>
+
+            <button type="button">
+              Yazar (Yıl)
+            </button>
+
+            <button type="button">
+              (Yazar, Yıl, s. 00)
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         AI ASİSTAN
+    ==================================================== -->
+
+    <section
+      id="assistant"
+      class="page"
+    >
+
+      <div class="page-title">
+
+        <span class="eyebrow">
+          AI ASİSTAN
+        </span>
+
+        <h1>
+          PDF'inle konuş
+        </h1>
+
+        <p>
+          Analiz ettiğin akademik belge hakkında
+          soru sor. Academic AI yalnızca ilgili
+          PDF içeriğini temel alarak cevap versin.
+        </p>
+
+      </div>
+
+      <div class="assistant-workspace">
+
+        <!-- AKTİF BELGE -->
+
+        <div class="assistant-document-card">
+
+          <div>
+
+            <span class="eyebrow">
+              AKTİF BELGE
+            </span>
+
+            <h3 id="assistantDocumentName">
+              Henüz aktif PDF yok
+            </h3>
+
+            <p
+              id="assistantDocumentStatus"
+              class="assistant-document-status empty"
+            >
+              Önce Makalelerim bölümünden bir PDF analiz et.
+            </p>
+
+          </div>
+
+          <button
+            class="secondary-button"
+            data-go="papers"
+            type="button"
+          >
+            PDF analiz et
+          </button>
+
+        </div>
+
+        <!-- SOHBET -->
+
+        <div class="chat assistant-chat">
+
+          <div class="assistant-chat-head">
+
+            <div>
+
+              <span class="eyebrow">
+                BELGE SOHBETİ
+              </span>
+
+              <h3>
+                Academic AI Asistan
+              </h3>
+
+            </div>
+
+            <button
+              id="assistantClear"
+              class="secondary-button"
+              type="button"
+            >
+              Sohbeti temizle
+            </button>
+
+          </div>
+
+          <div
+            id="assistantMessages"
+            class="assistant-messages"
+          ></div>
+
+          <!-- HAZIR SORULAR -->
+
+          <div class="assistant-suggestions">
+
+            <button
+              type="button"
+              onclick="
+                document.getElementById('assistantInput').value =
+                'Bu araştırmanın temel amacı nedir?';
+                document.getElementById('assistantInput').focus();
+              "
+            >
+              Araştırmanın amacı nedir?
+            </button>
+
+            <button
+              type="button"
+              onclick="
+                document.getElementById('assistantInput').value =
+                'Araştırmanın yöntemi ve örneklemi nedir?';
+                document.getElementById('assistantInput').focus();
+              "
+            >
+              Yöntem ve örneklem
+            </button>
+
+            <button
+              type="button"
+              onclick="
+                document.getElementById('assistantInput').value =
+                'Araştırmanın en önemli bulguları nelerdir?';
+                document.getElementById('assistantInput').focus();
+              "
+            >
+              Önemli bulgular
+            </button>
+
+            <button
+              type="button"
+              onclick="
+                document.getElementById('assistantInput').value =
+                'Araştırmacının açıkça belirttiği sınırlılıklar nelerdir?';
+                document.getElementById('assistantInput').focus();
+              "
+            >
+              Sınırlılıklar
+            </button>
+
+            <button
+              type="button"
+              onclick="
+                document.getElementById('assistantInput').value =
+                'Bu çalışmayı kendi tezimde hangi bölümlerde kullanabilirim?';
+                document.getElementById('assistantInput').focus();
+              "
+            >
+              Tezimde nasıl kullanırım?
+            </button>
+
+          </div>
+
+          <!-- MESAJ GİRİŞİ -->
+
+          <div class="chat-input assistant-input-row">
+
+            <input
+              id="assistantInput"
+              type="text"
+              autocomplete="off"
+              placeholder="PDF hakkında bir soru sor..."
+            >
+
+            <button
+              id="assistantSend"
+              type="button"
+              title="Gönder"
+            >
+              ↑
+            </button>
+
+          </div>
+
+          <div class="assistant-disclaimer">
+
+            <span>
+              ✓
+            </span>
+
+            <p>
+              AI Asistanın amacı genel sohbet etmek
+              değil, yüklediğin akademik belgeyi
+              kaynak olarak kullanarak sorularını
+              yanıtlamaktır. PDF'de desteklenmeyen
+              bilgilerin açıkça belirtilmesi gerekir.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
